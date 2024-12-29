@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+# Diaper Changers' Club App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Diaper Changers' Club** is an app designed to help parents find diaper changing facilities near them in various public spaces. The app dynamically displays these locations on an interactive map, fetched from a MongoDB database, and uses the user's current location to show diaper changing places within a reasonable range.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Real-time Data Fetching**: The app pulls diaper changing facility data from a MongoDB database.
+  - Locations' **coordinates** (latitude and longitude).
+  - **Place information** such as floor names (e.g., "1F", "2F") and type (e.g., “LH” for Lactation Room).
+  - **Location name** (e.g., "Kauppakeskus Sello").
+  - **Additional information** links to more detailed content (e.g., opening hours, services).
+  
+- **Interactive Map**: The app integrates Google Maps to display diaper changing facilities as markers. Clicking on a marker shows an information window with more details about the facility.
 
-### `npm start`
+- **Current Location Access**: The app uses the browser's geolocation API to fetch the user's current location and centers the map based on that. This feature ensures users can easily find facilities near them.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Nearby Facility Display**: Once the user's location is obtained, the app dynamically filters and shows nearby diaper changing locations, making it easier for parents to find accessible facilities.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Workflow
 
-### `npm test`
+1. **Map Initialization**: The app loads the Google Maps API and displays the map centered on a default location. Upon obtaining the user's current location, the map re-centers to the user’s position.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Fetching Data from MongoDB**: The app fetches diaper changing location data from the backend API, which queries a MongoDB database containing essential details (coordinates, name, type, etc.).
 
-### `npm run build`
+3. **Marker Placement**: Each diaper changing facility is represented as a marker on the map. Clicking on a marker reveals an info window with:
+   - Location name (e.g., "Kauppakeskus Sello").
+   - Floor and type details (e.g., "Floor 1 - LH").
+   - A link to additional information about the facility.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Displaying Nearby Facilities**: The app checks the user’s current location and filters the facilities shown to only those within a specific range, making the app more useful by focusing on nearby diaper changing locations. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshot
+![screenshot](Screenshot_dcc_app.png)

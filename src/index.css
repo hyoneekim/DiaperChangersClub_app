@@ -1,13 +1,47 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/*
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map.
+ */
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+ html,
+ body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ #map {
+   height: 100%; 
+   width: 100%;
+   transition: height 0.5s ease-in-out, visibility 0.5s ease-in-out;
+ }
+ 
+ .custom-map-control-button {
+   background-color: #fff;
+   border: 0;
+   border-radius: 2px;
+   box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+   margin: 10px;
+   padding: 0 0.5em;
+   font: 400 18px Roboto, Arial, sans-serif;
+   overflow: hidden;
+   height: 40px;
+   cursor: pointer;
+ }
+ 
+ .custom-map-control-button:hover {
+   background: rgb(235, 235, 235);
+ }
+ 
+ .info-window {
+   max-width: 200px; /* 최대 너비 조정 */
+   min-width: 150px; /* 최소 너비 조정 */
+   max-height: 150px; /* 최대 높이 조정 */
+   overflow-y: auto; /* 내용이 길어지면 스크롤 추가 */
+ }
+ 
+ .info-window p {
+   margin: 0; /* p 태그의 기본 여백 제거 */
+   font-size: 14px; /* 폰트 크기 조정 */
+ }
+ 
